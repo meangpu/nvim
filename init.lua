@@ -1032,3 +1032,6 @@ vim.keymap.set('', '<A-S-J>', '<C-d>zz')
 vim.keymap.set('', '<A-S-K>', '<C-u>zz')
 vim.keymap.set('', '<A-S-๋>', '<C-d>')
 vim.keymap.set('', '<A-S-ษ>', '<C-u>')
+
+vim.keymap.set('', '<A-h>', '<C-o>')
+vim.keymap.set('', '<A-l>', '<C-i>')
