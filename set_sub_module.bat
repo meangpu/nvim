@@ -1,24 +1,16 @@
 @echo off
 cd /d %~dp0
+echo Create Nvim Symlink
 
-echo Create Nvim Submodule
-call:del_then_symlink "%LocalAppData%\nvim" "%cd%"
+call:create_symlink "%LocalAppData%\nvim" "%cd%"
 
-:del_then_symlink
-@REM echo.try delete "%~1"
+:create_symlink
+echo Removing existing directory if present...
 rd /q /s "%~1" 2>nul
-@REM echo."%~1" Deleted
 
-REM Check if the directory exists
-if not exist "%~1\" (
-    REM Create the directory if it doesn't exist
-    mkdir "%~1"
-)
-
+echo Creating symlink...
 mklink /D "%~1" "%~2"
-@REM echo.Use "%~2" to Create symlink
+
 echo ============================================================
 echo:
 goto:eof
-
-pause
