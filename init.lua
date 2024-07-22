@@ -870,7 +870,6 @@ require('lazy').setup({
 -- Thai character mappings
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
-vim.opt.guifont = 'courmon'
 
 local thai_mappings = {
   ['ๅ'] = '1',
