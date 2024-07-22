@@ -256,6 +256,14 @@ require('lazy').setup({
   --  This is equivalent to:
   --    require('Comment').setup({})
 
+  {
+    'easymotion/vim-easymotion',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<Leader>e', '<Plug>(easymotion-e)', {})
+      vim.api.nvim_set_keymap('n', '<Leader>w', '<Plug>(easymotion-w)', {})
+    end,
+  },
+
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
