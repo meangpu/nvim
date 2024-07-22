@@ -157,6 +157,22 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- Key mappings
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set({ 'n', 'v' }, 'H', '0')
+vim.keymap.set({ 'n', 'v' }, 'L', '$')
+vim.keymap.set('', '<c-w>แ', '<c-w>c')
+
+-- Additional mappings
+vim.keymap.set('', '<A-S-J>', '<C-d>zz')
+vim.keymap.set('', '<A-S-K>', '<C-u>zz')
+vim.keymap.set('', '<A-S-๋>', '<C-d>')
+vim.keymap.set('', '<A-S-ษ>', '<C-u>')
+
+vim.keymap.set('', '<A-h>', '<C-o>')
+vim.keymap.set('', '<A-l>', '<C-i>')
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -910,21 +926,10 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
---
---
---
+
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.guifont = 'sarabun'
-
--- Key mappings
-vim.keymap.set('n', 'j', 'gj')
-vim.keymap.set('n', 'k', 'gk')
-vim.keymap.set({ 'n', 'v' }, 'H', '^')
-vim.keymap.set({ 'n', 'v' }, 'L', '$')
-
--- Clipboard setting
-vim.opt.clipboard = 'unnamed'
 
 -- Thai character mappings
 local thai_mappings = {
@@ -1023,18 +1028,6 @@ vim.keymap.set('', 'เเ', 'gg')
 vim.keymap.set('', 'ผผ', 'zz')
 vim.keymap.set('', 'ผะ', 'zt')
 vim.keymap.set('', 'ผิ', 'zb')
-
--- Window commands
-vim.keymap.set('', '<c-w>แ', '<c-w>c')
-
--- Additional mappings
-vim.keymap.set('', '<A-S-J>', '<C-d>zz')
-vim.keymap.set('', '<A-S-K>', '<C-u>zz')
-vim.keymap.set('', '<A-S-๋>', '<C-d>')
-vim.keymap.set('', '<A-S-ษ>', '<C-u>')
-
-vim.keymap.set('', '<A-h>', '<C-o>')
-vim.keymap.set('', '<A-l>', '<C-i>')
 
 -- duplicate down
 vim.keymap.set({ 'n', 'v' }, '<A-S-U>', function()
