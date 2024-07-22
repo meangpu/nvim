@@ -1,4 +1,5 @@
-
+@echo off
+cd /d %~dp0
 
 echo Create Nvim Submodule
 call:del_then_symlink "%LocalAppData%\nvim" "%cd%"
