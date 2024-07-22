@@ -923,11 +923,11 @@ require('lazy').setup({
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
+-- Thai character mappings
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.guifont = 'sarabun'
 
--- Thai character mappings
 local thai_mappings = {
   ['ๅ'] = '1',
   ['ภ'] = '4',
@@ -1017,10 +1017,7 @@ for thai, eng in pairs(thai_mappings) do
   vim.keymap.set('', thai, eng)
 end
 
--- Special mappings
 vim.keymap.set('', 'เเ', 'gg')
-
--- Scrolling relative to cursor
 vim.keymap.set('', 'ผผ', 'zz')
 vim.keymap.set('', 'ผะ', 'zt')
 vim.keymap.set('', 'ผิ', 'zb')
