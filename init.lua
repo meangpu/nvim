@@ -14,7 +14,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -870,7 +870,7 @@ require('lazy').setup({
 -- Thai character mappings
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
-vim.opt.guifont = 'sarabun'
+vim.opt.guifont = 'courmon'
 
 local thai_mappings = {
   ['ๅ'] = '1',
