@@ -17,7 +17,6 @@ echo Creating symlink...
 mklink /D "%~1" "%~2"
 
 echo ============================================================
-echo:
-goto:eof
-
 pause
+
+goto:eof
