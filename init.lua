@@ -1,26 +1,5 @@
 --[[
 
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-========                                    .-----.          ========
-========         .----------------------.   | === |          ========
-========         |.-""""""""""""""""""-.|   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||                    ||   |-----|          ========
-========         ||:Tutor              ||   |:::::|          ========
-========         |'-..................-'|   |____o|          ========
-========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
-========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
-========                                                     ========
-=====================================================================
-=====================================================================
-
-What is Kickstart?
 
   Kickstart.nvim is *not* a distribution.
 
@@ -164,7 +143,6 @@ vim.keymap.set({ 'n', 'v' }, 'H', '0')
 vim.keymap.set({ 'n', 'v' }, 'L', '$')
 vim.keymap.set('', '<c-w>แ', '<c-w>c')
 
--- Additional mappings
 vim.keymap.set('', '<A-S-J>', '<C-d>zz')
 vim.keymap.set('', '<A-S-K>', '<C-u>zz')
 vim.keymap.set('', '<A-S-๋>', '<C-d>')
@@ -172,6 +150,16 @@ vim.keymap.set('', '<A-S-ษ>', '<C-u>')
 
 vim.keymap.set('', '<A-h>', '<C-o>')
 vim.keymap.set('', '<A-l>', '<C-i>')
+
+-- duplicate down
+vim.keymap.set({ 'n', 'v' }, '<A-S-U>', function()
+  if vim.fn.mode() == 'n' then
+    return ':t.<CR>'
+  else
+    return ":'>t'><CR>gv"
+  end
+end, { expr = true, noremap = true, silent = true })
+-- END down
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -1036,12 +1024,3 @@ vim.keymap.set('', 'เเ', 'gg')
 vim.keymap.set('', 'ผผ', 'zz')
 vim.keymap.set('', 'ผะ', 'zt')
 vim.keymap.set('', 'ผิ', 'zb')
-
--- duplicate down
-vim.keymap.set({ 'n', 'v' }, '<A-S-U>', function()
-  if vim.fn.mode() == 'n' then
-    return ':t.<CR>'
-  else
-    return ":'>t'><CR>gv"
-  end
-end, { expr = true, noremap = true, silent = true })
