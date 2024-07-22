@@ -608,12 +608,11 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        python = { 'isort', 'black' },
+        javascript = { { 'prettierd', 'prettier' } },
+
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
         -- You can use a sub-list to tell conform to run *until* a formatter
-        -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
       },
     },
   },
@@ -791,9 +790,11 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'python', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
+
       auto_install = true,
+
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
@@ -964,3 +965,6 @@ vim.keymap.set('', 'เเ', 'gg')
 vim.keymap.set('', 'ผผ', 'zz')
 vim.keymap.set('', 'ผะ', 'zt')
 vim.keymap.set('', 'ผิ', 'zb')
+
+vim.opt.guifont = 'Fira Code:h18'
+vim.opt.textwidth = 100
