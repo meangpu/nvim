@@ -482,7 +482,8 @@ require('lazy').setup({
           -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
             map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+              local bufnr = vim.api.nvim_get_current_buf()
+              vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
             end, '[T]oggle Inlay [H]ints')
           end
         end,
@@ -814,7 +815,6 @@ require('lazy').setup({
   --
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
 
   require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
