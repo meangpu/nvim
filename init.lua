@@ -65,7 +65,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -77,8 +77,8 @@ vim.keymap.set({ 'n', 'v' }, 'H', '0')
 vim.keymap.set({ 'n', 'v' }, 'L', '$')
 vim.keymap.set('', '<c-w>แ', '<c-w>c')
 
-vim.keymap.set('', '<A-S-J>', '<C-d>zz')
-vim.keymap.set('', '<A-S-K>', '<C-u>zz')
+vim.keymap.set('', '<A-S-J>', '<C-d>')
+vim.keymap.set('', '<A-S-K>', '<C-u>')
 vim.keymap.set('', '<A-S-๋>', '<C-d>')
 vim.keymap.set('', '<A-S-ษ>', '<C-u>')
 
