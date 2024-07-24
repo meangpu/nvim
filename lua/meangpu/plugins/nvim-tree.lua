@@ -6,6 +6,7 @@ return {
   config = function()
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
+    vim.g.nvim_tree_respect_buf_cwd = 1
 
     local function my_on_attach(bufnr)
       local api = require 'nvim-tree.api'
@@ -18,16 +19,19 @@ return {
 
       vim.keymap.set('n', 'l', api.node.open.edit, opts 'Open')
       vim.keymap.set('n', '?', api.tree.toggle_help, opts 'Help')
+      vim.keymap.set('n', 'L', api.tree.change_root_to_node, opts 'CD')
+      vim.keymap.set('n', 'H', api.tree.change_root_to_parent, opts 'UP')
     end
 
     require('nvim-tree').setup {
       on_attach = my_on_attach,
+      -- update_focused_file = {
+      --   enable = true,
+      --   update_cwd = true,
+      -- },
       view = {
         width = 30,
         side = 'right',
-        mappings = {
-          custom_only = true, -- Allow default key mappings
-        },
       },
       sort = {
         sorter = 'case_sensitive',
