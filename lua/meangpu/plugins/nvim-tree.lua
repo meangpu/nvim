@@ -1,6 +1,8 @@
 return {
   'nvim-tree/nvim-tree.lua',
   dependencies = 'nvim-tree/nvim-web-devicons',
+  -- note to myself, use "a" to add file, and "g?" to see help
+
   config = function()
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
@@ -13,6 +15,13 @@ return {
       view = {
         width = 30,
         side = 'right',
+        mappings = {
+          list = {
+            { key = 'l', action = 'edit' },
+            { key = 'h', action = 'close_node' },
+            { key = 'v', action = 'vsplit' },
+          },
+        },
       },
       renderer = {
         group_empty = true,
