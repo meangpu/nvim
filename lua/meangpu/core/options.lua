@@ -36,7 +36,7 @@ opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 
 -- ui option
-opt.guifont = 'JetBrains Mono:h15'
+opt.guifont = 'JetBrains Mono:h14'
 opt.textwidth = 100
 opt.cursorline = true
 opt.number = true -- show default line number
