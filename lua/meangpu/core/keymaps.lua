@@ -4,6 +4,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
+vim.api.nvim_set_keymap('i', '<cr>', 'coc#pum#visible() ? coc#_select_confirm() : "\\<CR>"', { expr = true, noremap = true, silent = true })
+
 local keymap = vim.keymap
 
 keymap.set('n', 'j', 'gj')
@@ -28,10 +30,8 @@ keymap.set({ 'n', 'v' }, '<A-S-U>', function()
     return ":'>t'><CR>gv"
   end
 end, { expr = true, noremap = true, silent = true })
--- END down
 
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear highlight
 
 -- Diagnostic keymaps
 keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -40,9 +40,7 @@ keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnosti
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
---
 --  See `:help wincmd` for a list of all window commands
 keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
