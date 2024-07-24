@@ -27,7 +27,7 @@ opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 
 -- ui option
-opt.guifont = 'Fira Code:h18'
+opt.guifont = 'Fira Code:h15'
 opt.textwidth = 100
 opt.cursorline = true
 opt.number = true -- show default line number

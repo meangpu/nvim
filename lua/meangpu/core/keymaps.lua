@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
-vim.api.nvim_set_keymap('i', '<cr>', 'coc#pum#visible() ? coc#_select_confirm() : "\\<CR>"', { expr = true, noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<TAB>', 'pumvisible() ? "<C-y>" : "<TAB>"', { expr = true, noremap = true })
 
 local keymap = vim.keymap
 
@@ -46,6 +46,18 @@ keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' 
 keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- split window
+keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit vertical' })
+keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit horizontal' })
+keymap.set('n', '<leader>s=', '<C-w>=', { desc = 'make -S]plit equal size' })
+keymap.set('n', '<leader>x', '<cmd>close<CR>', { desc = 'close current split' })
+
+keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', { desc = '[T]ab open' })
+keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = '[T]ab close' })
+keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', { desc = '[T]ab next' })
+keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = '[T]ab previous' })
+keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = '[T]ab current new' })
 
 -- Thai character mappings
 
