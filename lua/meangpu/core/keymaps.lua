@@ -59,7 +59,7 @@ keymap.set('n', '<leader>tl', '<cmd>tabn<CR>', { desc = '[T]ab right' })
 keymap.set('n', '<leader>th', '<cmd>tabp<CR>', { desc = '[T]ab left' })
 keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = '[T]ab current new' })
 
--- Thai character mappings
+keymap.set('n', '<leader>S', ':w<CR>:source %<CR>', { desc = 'Save and [S]ource current file' })
 
 local thai_mappings = {
   ['ๅ'] = '1',
