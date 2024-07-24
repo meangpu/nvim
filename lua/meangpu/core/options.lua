@@ -1,5 +1,14 @@
 vim.cmd 'let g:netrw_liststyle = 3'
 
+-- Highlight when yanking (copying) text :help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 -- use ':source %' to refresh change
 local opt = vim.opt
 
