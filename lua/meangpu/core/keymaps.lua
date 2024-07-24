@@ -50,13 +50,13 @@ keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window'
 -- split window
 keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit vertical' })
 keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit horizontal' })
-keymap.set('n', '<leader>s=', '<C-w>=', { desc = 'make -S]plit equal size' })
-keymap.set('n', '<leader>x', '<cmd>close<CR>', { desc = 'close current split' })
+keymap.set('n', '<leader>s=', '<C-w>=', { desc = '[S]plit equal size' })
+keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = '[S]plit close current split' })
 
 keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', { desc = '[T]ab open' })
 keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = '[T]ab close' })
-keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', { desc = '[T]ab next' })
-keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', { desc = '[T]ab previous' })
+keymap.set('n', '<leader>tl', '<cmd>tabn<CR>', { desc = '[T]ab right' })
+keymap.set('n', '<leader>th', '<cmd>tabp<CR>', { desc = '[T]ab left' })
 keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = '[T]ab current new' })
 
 -- Thai character mappings
