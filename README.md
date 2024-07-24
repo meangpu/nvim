@@ -9,3 +9,6 @@ I try using this again on 2024 base on this video
 - to get back one folder use 
     - :e .
     - :Explore
+- split terminal
+    - ctrl+w s = horizontal
+    - ctrl+w v = vertical
