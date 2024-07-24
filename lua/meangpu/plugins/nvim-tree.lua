@@ -16,10 +16,18 @@ return {
       },
       renderer = {
         group_empty = true,
+        indent_markers = {
+          enable = true,
+        },
       },
       filters = {
         dotfiles = true,
+        custom = { '.DS_Store' },
       },
+      actions = {
+        open_file = { window_picker = { enable = false } },
+      },
+      git = { ignore = false },
     }
   end,
 }
