@@ -20,6 +20,10 @@ keymap.set('', '<A-S-ษ>', '<C-u>')
 keymap.set('', '<A-h>', '<C-o>')
 keymap.set('', '<A-l>', '<C-i>')
 
+keymap.set('n', '<leader>y', 'mzggyG`z')
+keymap.set('n', '<leader>q', 'ggdG')
+keymap.set('n', '<leader>v', 'ggVG')
+
 -- duplicate down
 keymap.set({ 'n', 'v' }, '<A-S-U>', function()
   if vim.fn.mode() == 'n' then
