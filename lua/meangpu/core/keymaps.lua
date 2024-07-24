@@ -23,6 +23,7 @@ keymap.set('', '<A-l>', '<C-i>')
 keymap.set('n', '<leader>y', 'mzggyG`z')
 keymap.set('n', '<leader>q', 'ggdG')
 keymap.set('n', '<leader>v', 'ggVG')
+keymap.set('n', '<leader>p', 'ggVGp')
 
 -- duplicate down
 keymap.set({ 'n', 'v' }, '<A-S-U>', function()
