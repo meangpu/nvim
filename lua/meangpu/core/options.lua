@@ -31,3 +31,6 @@ opt.guifont = 'Fira Code:h18'
 opt.textwidth = 100
 opt.cursorline = true
 opt.number = true -- show default line number
+
+opt.signcolumn = 'yes'
+opt.background = 'dark'
