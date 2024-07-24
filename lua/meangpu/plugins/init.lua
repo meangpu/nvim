@@ -2,39 +2,32 @@ return {
   'nvim-lua/plenary.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   {
-    'numToStr/Comment.nvim',
+    'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
     opts = {
       padding = true, ---Add a space b/w comment and the line
       sticky = true, ---Whether the cursor should stay at its position
       ignore = nil, ---Lines to be ignored while (un)comment
       ---LHS of toggle mappings in NORMAL mode
       toggler = {
-        ---Line-comment toggle keymap
         line = 'gcc',
-        ---Block-comment toggle keymap
         block = 'gbc',
       },
       ---LHS of operator-pending mappings in NORMAL and VISUAL mode
       opleader = {
-        ---Line-comment keymap
         line = 'gc',
-        ---Block-comment keymap
         block = 'gb',
       },
-      ---Enable keybindings
-      ---NOTE: If given `false` then the plugin won't create any mappings
       mappings = {
-        ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
         basic = true,
-        ---Extra mapping; `gco`, `gcO`, `gcA`
         extra = true,
       },
-      ---Function to call before (un)comment
-      pre_hook = nil,
-      ---Function to call after (un)comment
-      post_hook = nil,
     },
-  }, -- "gc" to comment visual regions/lines
+    config = function()
+      require('Comment').setup()
+      vim.api.nvim_set_keymap('n', '<C-/>', 'gcc', { noremap = false, silent = true })
+      vim.api.nvim_set_keymap('v', '<C-/>', 'gc', { noremap = false, silent = true })
+    end,
+  },
   {
     'easymotion/vim-easymotion',
     config = function()

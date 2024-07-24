@@ -5,14 +5,14 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
-    vim.opt.termguicolors = true
-
     require('nvim-tree').setup {
+
       sort = {
         sorter = 'case_sensitive',
       },
       view = {
         width = 30,
+        side = 'right',
       },
       renderer = {
         group_empty = true,
@@ -28,7 +28,7 @@ return {
 
     local keymap = vim.keymap
     keymap.set('n', '<leader>ft', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
-    keymap.set('n', '<leader>ff', '<cmd>NvimTreeFindFileToggle<CR>', { desc = 'Open explorer with current file' })
+    keymap.set('n', '<leader>ff', '<cmd>NvimTreeFindFile<CR>', { desc = 'Open explorer with current file' })
     keymap.set('n', '<leader>fc', '<cmd>NvimTreeCollapse<CR>', { desc = 'Toggle file explorer' })
     keymap.set('n', '<leader>fr', '<cmd>NvimTreeRefresh<CR>', { desc = 'Toggle file explorer' })
   end,
