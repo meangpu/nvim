@@ -24,10 +24,12 @@ return {
         dotfiles = true,
         custom = { '.DS_Store' },
       },
-      actions = {
-        open_file = { window_picker = { enable = false } },
-      },
-      git = { ignore = false },
     }
+
+    local keymap = vim.keymap
+    keymap.set('n', '<leader>ft', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
+    keymap.set('n', '<leader>ff', '<cmd>NvimTreeFindFileToggle<CR>', { desc = 'Open explorer with current file' })
+    keymap.set('n', '<leader>fc', '<cmd>NvimTreeCollapse<CR>', { desc = 'Toggle file explorer' })
+    keymap.set('n', '<leader>fr', '<cmd>NvimTreeRefresh<CR>', { desc = 'Toggle file explorer' })
   end,
 }

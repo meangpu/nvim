@@ -8,8 +8,7 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('meangpu.plugins'
-, {
+require('lazy').setup('meangpu.plugins', {
   ui = {
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
@@ -28,5 +27,5 @@ require('lazy').setup('meangpu.plugins'
       lazy = '💤 ',
     },
   },
-}
-)
+})
+
