@@ -8,20 +8,20 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     require('nvim-tree').setup {
-
-      sort = {
-        sorter = 'case_sensitive',
-      },
       view = {
         width = 30,
         side = 'right',
         mappings = {
+          custom_only = false, -- Ensure this is set to false
           list = {
             { key = 'l', action = 'edit' },
             { key = 'h', action = 'close_node' },
             { key = 'v', action = 'vsplit' },
           },
         },
+      },
+      sort = {
+        sorter = 'case_sensitive',
       },
       renderer = {
         group_empty = true,
