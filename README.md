@@ -12,3 +12,4 @@ I try using this again on 2024 base on this video
 - split terminal
     - ctrl+w s = horizontal
     - ctrl+w v = vertical
+    - use :vertical resize +20 to change window size
