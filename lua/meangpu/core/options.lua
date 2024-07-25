@@ -1,4 +1,5 @@
 vim.cmd 'let g:netrw_liststyle = 3'
+vim.o.termguicolors = true
 
 -- Highlight when yanking (copying) text :help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
