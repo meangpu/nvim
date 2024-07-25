@@ -5,5 +5,14 @@ return {
   init = function()
     vim.cmd.colorscheme 'tokyonight-night'
     vim.cmd.hi 'Comment gui=none'
+    config = function()
+      local bg_dark = '#011628'
+      local bg_highlight = '#011628'
+      local bg_search = '#011628'
+      local bg_visual = '#011628'
+      local fg_dark = '#011628'
+      local fg_gutter = '#011628'
+      local border = '#011628'
+    end
   end,
 }

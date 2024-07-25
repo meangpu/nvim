@@ -25,10 +25,6 @@ return {
 
     require('nvim-tree').setup {
       on_attach = my_on_attach,
-      update_focused_file = {
-        enable = true,
-        update_cwd = true,
-      },
       view = {
         width = 30,
         side = 'right',
