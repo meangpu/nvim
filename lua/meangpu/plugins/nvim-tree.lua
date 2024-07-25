@@ -4,6 +4,8 @@ return {
   -- note to myself, use "a" to add file, and "g?" to see help
 
   config = function()
+    -- config from https://github.com/nvim-tree/nvim-tree.lua/issues/860
+
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
     vim.g.nvim_tree_respect_buf_cwd = 1
@@ -26,21 +28,35 @@ return {
     require('nvim-tree').setup {
       on_attach = my_on_attach,
       view = {
+        adaptive_size = true,
         width = 30,
         side = 'right',
       },
-      sort = {
-        sorter = 'case_sensitive',
-      },
-      renderer = {
-        group_empty = true,
-        indent_markers = {
-          enable = true,
+      actions = {
+        open_file = {
+          quit_on_open = true, -- closes the tree when you open a file
         },
       },
-      filters = {
-        dotfiles = true,
-        custom = { '.DS_Store' },
+      renderer = {
+        indent_markers = {
+          enable = true, -- shows indent markers when folders are open
+        },
+        highlight_git = true, -- will enable file highlight for git attributes (can be used without the icons)
+        highlight_opened_files = 'all', -- will enable folder and file icon highlight for opened files/directories
+        root_folder_modifier = ':~', -- See :help filename-modifiers for more options
+        add_trailing = true, -- append a trailing slash to folder names
+        group_empty = true, -- compact folders that only contain a single folder into one node in the file tree
+      },
+      update_focused_file = {
+        enable = false, -- changes cwd of nvim-tree to that of new buffer's when opening nvim-tree
+      },
+      create_in_closed_folder = false, -- When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when false, and inside the folder when true
+      git = {
+        enable = true,
+        ignore = false,
+      },
+      diagnostics = {
+        enable = true,
       },
     }
 
