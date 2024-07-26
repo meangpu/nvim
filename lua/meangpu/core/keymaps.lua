@@ -4,6 +4,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
+vim.api.nvim_set_keymap('x', '<C-d>', 'y:%s/<C-r>"//g<Left><Left>', { noremap = true, silent = true })
+
 local keymap = vim.keymap
 
 keymap.set('n', 'j', 'gj')
