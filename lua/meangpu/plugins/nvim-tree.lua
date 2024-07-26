@@ -86,6 +86,9 @@ return {
       local tree = require 'nvim-tree'
       tree.change_dir(current_file_path)
       vim.cmd 'NvimTreeRefresh'
+
+      -- Select the current file in nvim-tree
+      vim.cmd 'NvimTreeFindFile'
     end
 
     local keymap = vim.keymap
