@@ -10,7 +10,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- use ':source %' to refresh change
 local opt = vim.opt
 
 opt.clipboard = 'unnamedplus'

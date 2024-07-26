@@ -11,6 +11,9 @@ keymap.set('n', 'k', 'gk')
 keymap.set({ 'n', 'v' }, 'H', '0')
 keymap.set({ 'n', 'v' }, 'L', '$')
 
+keymap.set('n', 'QQ', '<cmd>q!<CR>', { noremap = false })
+keymap.set('n', 'WW', '<cmd>w!<CR>', { noremap = false })
+
 keymap.set('', '<A-S-J>', '<C-d>')
 keymap.set('', '<A-S-K>', '<C-u>')
 
@@ -56,7 +59,6 @@ keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit vertical' })
 keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit horizontal' })
 keymap.set('n', '<leader>s=', '<C-w>=', { desc = '[S]plit equal size' })
 keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = '[S]plit close current split' })
-
 -- vertical resize +10 for bigger size
 
 keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', { desc = '[T]ab open' })
@@ -64,3 +66,7 @@ keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = '[T]ab close' })
 keymap.set('n', '<leader>tl', '<cmd>tabn<CR>', { desc = '[T]ab right' })
 keymap.set('n', '<leader>th', '<cmd>tabp<CR>', { desc = '[T]ab left' })
 keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = '[T]ab current new' })
+
+-- Remap for dealing with word wrap
+keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
