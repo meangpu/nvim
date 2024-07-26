@@ -1,43 +1,8 @@
 return {
   'nvim-lua/plenary.nvim',
-
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  {
-    -- beautify notification
-    'rcarriga/nvim-notify',
-    config = function()
-      require('notify').setup {
-        background_colour = '#000000',
-        enabled = true, -- Change to true to enable notifications
-        level = 'info', -- Notification level: "trace", "debug", "info", "warn", "error", "off"
-        timeout = 5000, -- Timeout for the notification in milliseconds
-        max_width = nil, -- Maximum width of the notification window
-        max_height = nil, -- Maximum height of the notification window
-        stages = 'fade_in_slide_out', -- Animation stages: "fade", "slide", "fade_in_slide_out", etc.
-        icons = {
-          ERROR = '',
-          WARN = '',
-          INFO = '',
-          DEBUG = '',
-          TRACE = '✎',
-        },
-        time_formats = {
-          '%H:%M:%S', -- Time format for the notification timestamp
-        },
-        on_open = nil, -- Function to run when the notification window is opened
-        on_close = nil, -- Function to run when the notification window is closed
-        render = 'default', -- Render style: "default", "minimal"
-        minimum_width = 50, -- Minimum width of the notification window
-        fps = 30, -- Frames per second for animations
-        top_down = true, -- Notification position: top-down or bottom-up
-      }
-
-      vim.notify = require 'notify'
-    end,
-  },
   {
     'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
     opts = {
@@ -64,26 +29,6 @@ return {
       vim.api.nvim_set_keymap('n', '<C-/>', 'gcc', { noremap = false, silent = true })
       vim.api.nvim_set_keymap('v', '<C-/>', 'gc', { noremap = false, silent = true })
     end,
-  },
-  {
-    'easymotion/vim-easymotion',
-    config = function()
-      vim.api.nvim_set_keymap('n', '<Leader>e', '<Plug>(easymotion-e)', {})
-      vim.api.nvim_set_keymap('n', '<Leader>b', '<Plug>(easymotion-b)', {})
-    end,
-  },
-
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
   },
 
   { -- Fuzzy Finder (files, lsp, etc)
@@ -643,11 +588,4 @@ return {
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
 }
