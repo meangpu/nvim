@@ -9,7 +9,7 @@ return {
       timeout = 3000, -- Timeout for the notification in milliseconds
       max_width = 300, -- Maximum width of the notification window
       max_height = 200, -- Maximum height of the notification window
-      stages = 'slide', -- Animation stages: "fade", "slide", "fade_in_slide_out", etc.
+      stages = 'static', -- Animation stages: "fade", "slide", "fade_in_slide_out", etc.
       icons = {
         ERROR = '',
         WARN = '',
@@ -25,7 +25,7 @@ return {
       render = 'default', -- Render style: "default", "minimal"
       minimum_width = 50, -- Minimum width of the notification window
       fps = 30, -- Frames per second for animations
-      top_down = true, -- Notification position: top-down or bottom-up
+      top_down = false, -- Notification position: top-down or bottom-up
       renderer = 'compact',
     }
 
