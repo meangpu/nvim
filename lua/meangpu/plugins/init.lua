@@ -1,7 +1,16 @@
 return {
   'nvim-lua/plenary.nvim',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = { signs = false },
+    config = function()
+      local todo_comments = require 'todo-comments'
+      todo_comments.setup()
+    end,
+  },
 
   {
     'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
