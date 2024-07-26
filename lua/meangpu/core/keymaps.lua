@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap('x', '<C-d>', 'y:%s/<C-r>"//g<Left><Left>', { noremap = 
 
 local keymap = vim.keymap
 
-keymap.set('n', '<C-A-n>', ':w<CR>:!python %<CR>', { noremap = true, silent = true })
+keymap.set('n', '<C-n>', ':w<CR>:!python %<CR>', { noremap = true, silent = true })
 
 keymap.set('n', 'j', 'gj')
 keymap.set('n', 'k', 'gk')
