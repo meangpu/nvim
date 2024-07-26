@@ -27,4 +27,11 @@ require('lazy').setup('meangpu.plugins', {
       lazy = '💤 ',
     },
   },
+  checker = {
+    enable = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
 })
