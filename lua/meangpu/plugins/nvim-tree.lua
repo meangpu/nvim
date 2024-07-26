@@ -61,10 +61,32 @@ return {
       },
     }
 
+    -- Function to change the root folder to the current file's directory
+    local function change_nvim_tree_root_to_current_file()
+      local current_file_path = vim.fn.expand '%:p:h'
+
+      -- Check if nvim-tree is open by inspecting buffers
+      local tree_buf_open = false
+      for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.bo[buf].filetype == 'NvimTree' then
+          tree_buf_open = true
+          break
+        end
+      end
+
+      -- Open nvim-tree if it is not open
+      if not tree_buf_open then
+        vim.cmd 'NvimTreeToggle'
+      end
+
+      -- Change directory and refresh
+      local tree = require 'nvim-tree'
+      tree.change_dir(current_file_path)
+      vim.cmd 'NvimTreeRefresh'
+    end
+
     local keymap = vim.keymap
-    -- keymap.set('n', '<leader>ft', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
-    keymap.set('n', '<C-S-e>', '<cmd>NvimTreeFindFile<CR>', { desc = 'Open explorer with current file' })
-    -- keymap.set('n', '<leader>fc', '<cmd>NvimTreeCollapse<CR>', { desc = 'Toggle file explorer' })
-    -- keymap.set('n', '<leader>fr', '<cmd>NvimTreeRefresh<CR>', { desc = 'Toggle file explorer' })
+    keymap.set('n', '<C-S-e>', '<cmd>cd %:p:h<CR><cmd>NvimTreeFindFile<CR>', { desc = 'Open explorer with current file' })
+    keymap.set('n', '<leader>fr', change_nvim_tree_root_to_current_file, { desc = "Change nvim-tree root to current file's directory" })
   end,
 }
