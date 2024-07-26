@@ -9,7 +9,7 @@ return {
       timeout = 3000, -- Timeout for the notification in milliseconds
       max_width = 300, -- Maximum width of the notification window
       max_height = 200, -- Maximum height of the notification window
-      stages = 'fade', -- Animation stages: "fade", "slide", "fade_in_slide_out", etc.
+      stages = 'slide', -- Animation stages: "fade", "slide", "fade_in_slide_out", etc.
       icons = {
         ERROR = '',
         WARN = '',

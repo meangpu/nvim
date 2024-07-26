@@ -13,6 +13,8 @@ keymap.set('n', 'k', 'gk')
 keymap.set({ 'n', 'v' }, 'H', '0')
 keymap.set({ 'n', 'v' }, 'L', '$')
 
+keymap.set('i', '<C-v>', '<Esc>"+pa', { noremap = true, silent = true })
+
 -- Move lines up and down in normal and visual mode
 keymap.set('n', '<A-k>', ':m .-2<CR>==')
 keymap.set('n', '<A-j>', ':m .+1<CR>==')

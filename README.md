@@ -1,10 +1,13 @@
 # kickstart.nvim
 
 I try using this again on 2024 base on this video
-[The Only Video You Need to Get Started with Neovim - YouTube](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
+- [The Only Video You Need to Get Started with Neovim - YouTube](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
+- [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide - YouTube](https://www.youtube.com/watch?v=6pAG3BHurdM)
 
 
 ## note to myself
+
+
 
 - to get back one folder use 
     - :e .

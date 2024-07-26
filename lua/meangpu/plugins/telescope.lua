@@ -10,7 +10,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
       -- `build` is used to run some command when the plugin is installed/updated.
       -- This is only run then, not every time Neovim starts up.
       build = 'make',
-
       -- `cond` is a condition used to determine whether this plugin should be
       -- installed and loaded.
       cond = function()
@@ -31,11 +30,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
+      defaults = {
+        mappings = {
+          path_display = { 'smart' },
+          i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+        },
+      },
       -- pickers = {}
       extensions = {
         ['ui-select'] = {
