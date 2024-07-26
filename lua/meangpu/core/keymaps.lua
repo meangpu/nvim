@@ -59,7 +59,10 @@ keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit vertical' })
 keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit horizontal' })
 keymap.set('n', '<leader>s=', '<C-w>=', { desc = '[S]plit equal size' })
 keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = '[S]plit close current split' })
+--
 -- vertical resize +10 for bigger size
+keymap.set('n', '<c-s-.>', '<C-w>+', { desc = 'change split size up' })
+keymap.set('n', '<c-s-,>', '<C-w>-', { desc = 'change split size down' })
 
 keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', { desc = '[T]ab open' })
 keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = '[T]ab close' })

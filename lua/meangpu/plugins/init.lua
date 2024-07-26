@@ -1,6 +1,19 @@
 return {
   'nvim-lua/plenary.nvim',
+
+  -- Highlight todo, notes, etc in comments
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  { -- beautifuy notification
+    'rcarriga/nvim-notify',
+    config = function()
+      require('notify').setup {
+        background_colour = '#000000',
+        enabled = false,
+      }
+    end,
+  },
   {
     'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
     opts = {
@@ -241,6 +254,7 @@ return {
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<F2>', vim.lsp.buf.rename, '[R]e[n]ame')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
@@ -518,9 +532,6 @@ return {
       }
     end,
   },
-
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',

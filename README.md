@@ -13,3 +13,8 @@ I try using this again on 2024 base on this video
     - ctrl+w s = horizontal
     - ctrl+w v = vertical
     - use :vertical res +20 to change window size
+
+
+plugin to install
+- `Trouble` = show all trouble like vscode 
+- `obsidian` = may be use this with obsidian? but nvim not support thai, so not much prior
