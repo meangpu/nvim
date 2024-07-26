@@ -6,9 +6,6 @@ I try using this again on 2024 base on this video
 
 
 ## note to myself
-
-
-
 - to get back one folder use 
     - :e .
     - :Explore
@@ -21,3 +18,7 @@ I try using this again on 2024 base on this video
 plugin to install
 - `Trouble` = show all trouble like vscode 
 - `obsidian` = may be use this with obsidian? but nvim not support thai, so not much prior
+
+
+todo:
+- config hotkey that use `treesitter` select function
