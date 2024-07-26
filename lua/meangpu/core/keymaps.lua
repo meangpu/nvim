@@ -13,6 +13,12 @@ keymap.set('n', 'k', 'gk')
 keymap.set({ 'n', 'v' }, 'H', '0')
 keymap.set({ 'n', 'v' }, 'L', '$')
 
+-- Move lines up and down in normal and visual mode
+keymap.set('n', '<A-k>', ':m .-2<CR>==')
+keymap.set('n', '<A-j>', ':m .+1<CR>==')
+keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
+keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
+
 keymap.set('n', 'QQ', '<cmd>q!<CR>', { noremap = false })
 keymap.set('n', 'WW', '<cmd>w!<CR>', { noremap = false })
 
