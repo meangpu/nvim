@@ -49,7 +49,7 @@ return {
       },
       update_focused_file = {
         enable = true,
-        update_cwd = true,
+        -- update_cwd = true,
       },
       create_in_closed_folder = false, -- When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when false, and inside the folder when true
       git = {
