@@ -65,6 +65,9 @@ return {
     local function change_nvim_tree_root_to_current_file()
       local current_file_path = vim.fn.expand '%:p:h'
 
+      -- Change the working directory to the current file's directory
+      vim.cmd('cd ' .. current_file_path)
+
       -- Check if nvim-tree is open by inspecting buffers
       local tree_buf_open = false
       for _, buf in ipairs(vim.api.nvim_list_bufs()) do
@@ -86,7 +89,7 @@ return {
     end
 
     local keymap = vim.keymap
-    keymap.set('n', '<C-S-e>', '<cmd>cd %:p:h<CR><cmd>NvimTreeFindFile<CR>', { desc = 'Open explorer with current file' })
-    keymap.set('n', '<leader>fr', change_nvim_tree_root_to_current_file, { desc = "Change nvim-tree root to current file's directory" })
+    keymap.set('n', '<C-S-e>', '<cmd>NvimTreeFindFile<CR>', { desc = 'Open explorer with current file' })
+    keymap.set('n', '<leader>ch', change_nvim_tree_root_to_current_file, { desc = "[Ch]ange nvim-tree root to current file's directory" })
   end,
 }

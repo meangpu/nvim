@@ -33,13 +33,6 @@ keymap.set('n', '<leader>Q', 'ggdG')
 keymap.set('n', '<leader>v', 'ggVG')
 keymap.set('n', '<leader>p', 'ggVGp')
 
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>chd',
-  [[<cmd>cd %:p:h<CR><cmd>NvimTreeFindFile<CR>:pwd<CR>]],
-  { noremap = true, silent = true, desc = '[Ch]ange directory' }
-)
--- keymap.set('n', '<leader>chd', ':cd %:p:h<CR>:pwd<CR>', { desc = '[Ch]ange directory' })
 keymap.set('n', '<leader>S', '<cmd>w<CR><cmd>source %<CR>', { desc = 'Save and [S]ource current file' })
 
 keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
