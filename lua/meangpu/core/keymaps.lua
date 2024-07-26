@@ -33,7 +33,14 @@ keymap.set('n', '<leader>Q', 'ggdG')
 keymap.set('n', '<leader>v', 'ggVG')
 keymap.set('n', '<leader>p', 'ggVGp')
 
-keymap.set('n', '<leader>cd', ':cd %:p:h<CR>:pwd<CR>')
+keymap.set(
+  'n',
+  '<leadeก>chd',
+  ':cd %:p:h<CR>:NvimTreeChangeDir %:p:h<CR>:NvimTreeRefresh<CR>:pwd<CR>',
+  { noremap = true, silent = true, desc = '[Ch]ange directory' }
+)
+
+keymap.set('n', '<leader>chd', ':cd %:p:h<CR>:pwd<CR>', { desc = '[Ch]ange directory' })
 keymap.set('n', '<leader>S', '<cmd>w<CR><cmd>source %<CR>', { desc = 'Save and [S]ource current file' })
 
 keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
@@ -81,3 +88,16 @@ keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = '[T]ab current new' 
 -- Remap for dealing with word wrap
 keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+local function copy_diagnostic()
+  local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line '.' - 1 })
+  if #diagnostics > 0 then
+    local message = diagnostics[1].message
+    vim.fn.setreg('+', message)
+    print 'Diagnostic message copied to clipboard!'
+  else
+    print 'No diagnostic message found at the current line.'
+  end
+end
+
+keymap.set('n', '<leader>cd', copy_diagnostic, { noremap = true, silent = true, desc = 'Copy diagnostic message' })

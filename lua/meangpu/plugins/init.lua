@@ -5,13 +5,37 @@ return {
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  { -- beautifuy notification
+  {
+    -- beautify notification
     'rcarriga/nvim-notify',
     config = function()
       require('notify').setup {
         background_colour = '#000000',
-        enabled = false,
+        enabled = true, -- Change to true to enable notifications
+        level = 'info', -- Notification level: "trace", "debug", "info", "warn", "error", "off"
+        timeout = 5000, -- Timeout for the notification in milliseconds
+        max_width = nil, -- Maximum width of the notification window
+        max_height = nil, -- Maximum height of the notification window
+        stages = 'fade_in_slide_out', -- Animation stages: "fade", "slide", "fade_in_slide_out", etc.
+        icons = {
+          ERROR = '',
+          WARN = '',
+          INFO = '',
+          DEBUG = '',
+          TRACE = '✎',
+        },
+        time_formats = {
+          '%H:%M:%S', -- Time format for the notification timestamp
+        },
+        on_open = nil, -- Function to run when the notification window is opened
+        on_close = nil, -- Function to run when the notification window is closed
+        render = 'default', -- Render style: "default", "minimal"
+        minimum_width = 50, -- Minimum width of the notification window
+        fps = 30, -- Frames per second for animations
+        top_down = true, -- Notification position: top-down or bottom-up
       }
+
+      vim.notify = require 'notify'
     end,
   },
   {
