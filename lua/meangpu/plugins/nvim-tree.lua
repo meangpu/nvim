@@ -48,7 +48,8 @@ return {
         group_empty = true, -- compact folders that only contain a single folder into one node in the file tree
       },
       update_focused_file = {
-        enable = false, -- changes cwd of nvim-tree to that of new buffer's when opening nvim-tree
+        enable = true,
+        update_cwd = true,
       },
       create_in_closed_folder = false, -- When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when false, and inside the folder when true
       git = {
