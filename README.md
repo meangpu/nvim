@@ -6,6 +6,9 @@ I try using this again on 2024 base on this video
 
 
 ## note to myself
+
+read this for vscode https://galenwong.github.io/blog/2021-03-22-vscode-neovim-vs-vscodevim/
+
 - to get back one folder use 
     - :e .
     - :Explore
@@ -19,6 +22,5 @@ plugin to install
 - `Trouble` = show all trouble like vscode 
 - `obsidian` = may be use this with obsidian? but nvim not support thai, so not much prior
 
-
-todo:
+TODO:
 - config hotkey that use `treesitter` select function
