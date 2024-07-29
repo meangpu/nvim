@@ -38,7 +38,7 @@ keymap.set('n', '<leader>Q', 'ggdG')
 keymap.set('n', '<leader>v', 'ggVG')
 keymap.set('n', '<leader>p', 'ggVGp')
 
-keymap.set('n', '<leader>S', '<cmd>up<CR><cmd>source %<CR>', { desc = 'Save and [S]ource current file' })
+keymap.set('n', '<leader>S', '<cmd>w<CR><cmd>source %<CR>', { desc = 'Save and [S]ource current file' })
 
 keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
 
