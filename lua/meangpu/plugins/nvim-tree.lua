@@ -47,13 +47,12 @@ return {
         add_trailing = true, -- append a trailing slash to folder names
         group_empty = true, -- compact folders that only contain a single folder into one node in the file tree
       },
-      filter = {
+      filters = {
         dotfiles = true,
         custom = {
           'node_modules/.*',
         },
       },
-
       update_focused_file = {
         enable = true,
         -- update_cwd = true,
