@@ -25,7 +25,7 @@ keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
 keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
 
 keymap.set('n', 'QQ', '<cmd>q!<CR>', { noremap = false })
-keymap.set('n', 'WW', '<cmd>w!<CR>', { noremap = false })
+keymap.set('n', 'WW', '<cmd>up<CR>', { noremap = false })
 
 keymap.set('', '<A-S-J>', '<C-d>')
 keymap.set('', '<A-S-K>', '<C-u>')
@@ -38,7 +38,7 @@ keymap.set('n', '<leader>Q', 'ggdG')
 keymap.set('n', '<leader>v', 'ggVG')
 keymap.set('n', '<leader>p', 'ggVGp')
 
-keymap.set('n', '<leader>S', '<cmd>w<CR><cmd>source %<CR>', { desc = 'Save and [S]ource current file' })
+keymap.set('n', '<leader>S', '<cmd>up<CR><cmd>source %<CR>', { desc = 'Save and [S]ource current file' })
 
 keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
 

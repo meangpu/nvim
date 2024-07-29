@@ -12,6 +12,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 local opt = vim.opt
 
+vim.scriptencoding = 'utf-8'
+opt.encoding = 'utf-8'
+opt.fileencoding = 'utf-8'
+
 opt.clipboard = 'unnamedplus'
 opt.mouse = 'a'
 opt.showmode = false -- don't show normal insert visual because it already have in editor
@@ -31,9 +35,7 @@ opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 opt.inccommand = 'split'
 opt.hlsearch = true
 opt.scrolloff = 20 -- Minimal number of screen lines to keep above and below the cursor.
-
-opt.encoding = 'utf-8'
-opt.fileencoding = 'utf-8'
+opt.wildignore:append { '*/node_modules/*' }
 
 -- ui option
 opt.guifont = 'JetBrains Mono:h14'
