@@ -8,7 +8,7 @@ vim.g.have_nerd_font = true
 
 local keymap = vim.keymap
 
-keymap.set('n', '<C-n>', ':w<CR>:!python %<CR>', { noremap = true, silent = true })
+keymap.set('n', '<C-n>', ':up<CR>:!python %<CR>', { noremap = true, silent = true })
 
 keymap.set('n', 'j', 'gj')
 keymap.set('n', 'k', 'gk')

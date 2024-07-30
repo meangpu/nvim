@@ -7,6 +7,11 @@ return {
     'nvim-lualine/lualine.nvim',
     enabled = false,
   },
+  -- do popup but only for the nvim tree for add file / rename file
+  {
+    'stevearc/dressing.nvim',
+    event = 'VeryLazy',
+  },
   -- messages, cmdline and the popupmenu
   {
     'folke/noice.nvim',
