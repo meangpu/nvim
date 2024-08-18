@@ -22,6 +22,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
   },
   config = function()
     require('telescope').setup {
+      defaults = {
+        file_ignore_patterns = { '.git', '.cache', 'node_modules', '%.a', '%.out', '%.class', '%.pdf', '%.mkv', '%.mp4', '%.zip' },
+      },
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
