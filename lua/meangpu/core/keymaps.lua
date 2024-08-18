@@ -19,10 +19,10 @@ keymap.set('i', '<C-v>', '<Esc>"+pa', { noremap = true, silent = true })
 keymap.set('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 
 -- Move lines up and down in normal and visual mode
-keymap.set('n', '<A-k>', ':m .-2<CR>==')
-keymap.set('n', '<A-j>', ':m .+1<CR>==')
-keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
-keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
+keymap.set('n', '<A-k>', ':m .-2<CR>==', { silent = true })
+keymap.set('n', '<A-j>', ':m .+1<CR>==', { silent = true })
+keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { silent = true })
+keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { silent = true })
 
 keymap.set('n', 'QQ', '<cmd>q!<CR>', { noremap = false })
 keymap.set('n', 'WW', '<cmd>up<CR>', { noremap = false })
