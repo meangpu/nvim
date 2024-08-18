@@ -9,6 +9,11 @@ I try using this again on 2024 base on this video
 
 read this for vscode https://galenwong.github.io/blog/2021-03-22-vscode-neovim-vs-vscodevim/
 
+if cannot use telescope <leader>sg use 
+```
+choco install ripgrep
+```
+
 
 plugin to install
 - `Trouble` = show all trouble like vscode 
