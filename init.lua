@@ -46,44 +46,13 @@ keymap.set('n', '<leader>p', 'ggVGp')
 
 
 keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
-keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear highlight
 
 
--- split window
-keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit vertical' })
-keymap.set('n', '<leader>sh', '<C-w>s', { desc = '[S]plit horizontal' })
-keymap.set('n', '<leader>s=', '<C-w>=', { desc = '[S]plit equal size' })
-keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = '[S]plit close current split' })
---
--- vertical resize +10 for bigger size
-keymap.set('n', '<c-s-.>', '<C-w>+', { desc = 'change split size up' })
-keymap.set('n', '<c-s-,>', '<C-w>-', { desc = 'change split size down' })
-
-keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', { desc = '[T]ab open' })
-keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', { desc = '[T]ab close' })
-keymap.set('n', '<leader>tl', '<cmd>tabn<CR>', { desc = '[T]ab right' })
-keymap.set('n', '<leader>th', '<cmd>tabp<CR>', { desc = '[T]ab left' })
-keymap.set('n', '<leader>tf', '<cmd>tabnew %<CR>', { desc = '[T]ab current new' })
 
 -- Remap for dealing with word wrap
 keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
-local function copy_diagnostic()
-  local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line '.' - 1 })
-  if #diagnostics > 0 then
-    local message = diagnostics[1].message
-    vim.fn.setreg('+', message)
-    print 'Diagnostic message copied to clipboard!'
-  else
-    print 'No diagnostic message found at the current line.'
-  end
-end
-
-keymap.set('n', '<leader>cd', copy_diagnostic, { noremap = true, silent = true, desc = 'Copy diagnostic message' })
-
-
-local keymap = vim.keymap
 
 local thai_mappings = {
   ['ๅ'] = '1',
