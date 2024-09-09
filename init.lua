@@ -27,26 +27,23 @@ local keymap = vim.keymap
 keymap.set({ 'n', 'v' }, 'H', '0')
 keymap.set({ 'n', 'v' }, 'L', 'g_')
 
--- keymap.set('i', '<C-v>', '<Esc>"+pa', { noremap = true, silent = true })
--- keymap.set('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 
-keymap.set('n', 'QQ', '<cmd>q!<CR>', { noremap = false })
-keymap.set('n', 'WW', '<cmd>up<CR>', { noremap = false })
+-- keymap.set({ 'n', 'v' }, '<A-S-K>', '<C-u>')
+-- keymap.set({ 'n', 'v' }, '<A-S-J>', '<C-d>')
 
-keymap.set({ 'n', 'v' }, '<A-S-J>', '<C-d>')
-keymap.set({ 'n', 'v' }, '<A-S-K>', '<C-u>')
+keymap.set({ 'n', 'v' }, '<A-J>', '<C-d>')
+keymap.set({ 'n', 'v' }, '<A-K>', '<C-u>')
 
 keymap.set('', '<A-h>', '<C-o>')
 keymap.set('', '<A-l>', '<C-i>')
 
 keymap.set('n', '<leader>y', 'mzggyG`z')
-keymap.set('n', '<leader>Q', 'ggdG')
+keymap.set('n', '<leader>q', 'ggdG')
 keymap.set('n', '<leader>v', 'ggVG')
 keymap.set('n', '<leader>p', 'ggVGp')
 
 
 keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
-
 
 
 -- Remap for dealing with word wrap
