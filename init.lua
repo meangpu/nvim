@@ -24,21 +24,11 @@ vim.g.maplocalleader = ' '
 
 local keymap = vim.keymap
 
-keymap.set('n', '<C-n>', ':up<CR>:!python %<CR>', { noremap = true, silent = true })
-
-keymap.set('n', 'j', 'gj')
-keymap.set('n', 'k', 'gk')
 keymap.set({ 'n', 'v' }, 'H', '0')
 keymap.set({ 'n', 'v' }, 'L', 'g_')
 
-keymap.set('i', '<C-v>', '<Esc>"+pa', { noremap = true, silent = true })
-keymap.set('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
-
--- Move lines up and down in normal and visual mode
-keymap.set('n', '<A-k>', ':m .-2<CR>==', { silent = true })
-keymap.set('n', '<A-j>', ':m .+1<CR>==', { silent = true })
-keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { silent = true })
-keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { silent = true })
+-- keymap.set('i', '<C-v>', '<Esc>"+pa', { noremap = true, silent = true })
+-- keymap.set('i', '<C-BS>', '<C-w>', { noremap = true, silent = true })
 
 keymap.set('n', 'QQ', '<cmd>q!<CR>', { noremap = false })
 keymap.set('n', 'WW', '<cmd>up<CR>', { noremap = false })
