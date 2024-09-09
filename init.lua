@@ -1,5 +1,3 @@
-
-
 -- Highlight when yanking (copying) text :help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -16,44 +14,13 @@ opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
 
 opt.clipboard = 'unnamedplus'
-opt.mouse = 'a'
-opt.showmode = false -- don't show normal insert visual because it already have in editor
-opt.breakindent = true
-opt.undofile = true
-opt.wrap = true
-opt.autoindent = true
-opt.ignorecase = true
-opt.smartcase = true
-opt.signcolumn = 'yes'
-opt.updatetime = 250
-opt.timeoutlen = 300 -- Displays which-key popup sooner
-opt.splitright = true
-opt.splitbelow = true
-opt.list = true
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-opt.inccommand = 'split'
 opt.hlsearch = true
-opt.scrolloff = 20 -- Minimal number of screen lines to keep above and below the cursor.
-opt.wildignore:append { '*/node_modules/*' }
-
--- ui option
-opt.guifont = 'JetBrains Mono:h14'
-opt.textwidth = 100
-opt.cursorline = true
-opt.number = true -- show default line number
-
-opt.signcolumn = 'yes'
-opt.background = 'dark'
-
-
+opt.scrolloff = 20
 
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.have_nerd_font = true
 
--- vim.api.nvim_set_keymap('x', '<C-d>', 'y:%s/<C-r>"//g<Left><Left>', { noremap = true, silent = true })
 
 local keymap = vim.keymap
 
@@ -76,8 +43,8 @@ keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { silent = true })
 keymap.set('n', 'QQ', '<cmd>q!<CR>', { noremap = false })
 keymap.set('n', 'WW', '<cmd>up<CR>', { noremap = false })
 
-keymap.set('', '<A-S-J>', '<C-d>')
-keymap.set('', '<A-S-K>', '<C-u>')
+keymap.set({ 'n', 'v' }, '<A-S-J>', '<C-d>')
+keymap.set({ 'n', 'v' }, '<A-S-K>', '<C-u>')
 
 keymap.set('', '<A-h>', '<C-o>')
 keymap.set('', '<A-l>', '<C-i>')
@@ -87,33 +54,10 @@ keymap.set('n', '<leader>Q', 'ggdG')
 keymap.set('n', '<leader>v', 'ggVG')
 keymap.set('n', '<leader>p', 'ggVGp')
 
-keymap.set('n', '<leader>S', '<cmd>w<CR><cmd>source %<CR>', { desc = 'Save and [S]ource current file' })
 
 keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
-
--- duplicate down
-keymap.set({ 'n', 'v' }, '<A-S-U>', function()
-  if vim.fn.mode() == 'n' then
-    return ':t.<CR>'
-  else
-    return ":'>t'><CR>gv"
-  end
-end, { expr = true, noremap = true, silent = true })
-
 keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>') -- clear highlight
 
--- Diagnostic keymaps
-keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
---  Use CTRL+<hjkl> to switch between windows
-keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- split window
 keymap.set('n', '<leader>sv', '<C-w>v', { desc = '[S]plit vertical' })
