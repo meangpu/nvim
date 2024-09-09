@@ -28,11 +28,8 @@ keymap.set({ 'n', 'v' }, 'H', '0')
 keymap.set({ 'n', 'v' }, 'L', 'g_')
 
 
--- keymap.set({ 'n', 'v' }, '<A-S-K>', '<C-u>')
--- keymap.set({ 'n', 'v' }, '<A-S-J>', '<C-d>')
-
-keymap.set({ 'n', 'v' }, '<A-J>', '<C-d>')
-keymap.set({ 'n', 'v' }, '<A-K>', '<C-u>')
+keymap.set({ 'n', 'v' }, '<A-S-k>', '<C-u>')
+keymap.set({ 'n', 'v' }, '<A-S-j>', '<C-d>')
 
 keymap.set('', '<A-h>', '<C-o>')
 keymap.set('', '<A-l>', '<C-i>')
@@ -44,7 +41,6 @@ keymap.set('n', '<leader>p', 'ggVGp')
 
 
 keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
-
 
 -- Remap for dealing with word wrap
 keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
