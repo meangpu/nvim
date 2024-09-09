@@ -31,21 +31,14 @@ keymap.set({ 'n', 'v' }, 'L', 'g_')
 keymap.set({ 'n', 'v' }, '<A-S-k>', '<C-u>')
 keymap.set({ 'n', 'v' }, '<A-S-j>', '<C-d>')
 
-keymap.set('', '<A-h>', '<C-o>')
-keymap.set('', '<A-l>', '<C-i>')
-
 keymap.set('n', '<leader>y', 'mzggyG`z')
 keymap.set('n', '<leader>q', 'ggdG')
 keymap.set('n', '<leader>v', 'ggVG')
 keymap.set('n', '<leader>p', 'ggVGp')
 
-
-keymap.set('c', '<C-V>', '<C-R>+', { noremap = true }) -- paste in command mode
-
 -- Remap for dealing with word wrap
 keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
 
 local thai_mappings = {
   ['ๅ'] = '1',
@@ -136,10 +129,6 @@ for thai, eng in pairs(thai_mappings) do
   keymap.set('', thai, eng)
 end
 
-keymap.set('', 'เเ', 'gg')
-keymap.set('', 'ผผ', 'zz')
-keymap.set('', 'ผะ', 'zt')
-keymap.set('', 'ผิ', 'zb')
 
-keymap.set('', '<A-S-๋>', '<C-d>')
-keymap.set('', '<A-S-ษ>', '<C-u>')
+-- keymap.set('', '<A-S-๋>', '<C-d>')
+-- keymap.set('', '<A-S-ษ>', '<C-u>')
