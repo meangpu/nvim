@@ -39,6 +39,7 @@ opt.wildignore:append { '*/node_modules/*' }
 
 -- ui option
 opt.guifont = 'JetBrains Mono:h14'
+opt.guifont = 'Noto Sans Thai:h14'
 opt.textwidth = 100
 opt.cursorline = true
 opt.number = true -- show default line number
