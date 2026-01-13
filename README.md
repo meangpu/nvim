@@ -24,3 +24,6 @@ TODO:
 my shortcut
 - QQ is quit
 - WW is update / save
+- ctrl+shift+e = exploror (treesitter)
+- shift+l / shift+h = go into / out folder on the exploror
+- :pwd = show current dir

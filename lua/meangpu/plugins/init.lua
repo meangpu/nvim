@@ -276,13 +276,13 @@ return {
         return {
           timeout_ms = 500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+          stop_after_first = true, -- 👈 THIS replaces nested {}
         }
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
-        javascript = { { 'prettierd', 'prettier' } },
-
+        javascript = { 'prettierd', 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- You can use a sub-list to tell conform to run *until* a formatter
       },
