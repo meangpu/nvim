@@ -276,7 +276,7 @@ return {
         return {
           timeout_ms = 500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-          stop_after_first = true, -- 👈 THIS replaces nested {}
+          stop_after_first = true,
         }
       end,
       formatters_by_ft = {
