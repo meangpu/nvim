@@ -1,11 +1,20 @@
 return {
-  -- can use `:Telescope colorscheme`.
-  'folke/tokyonight.nvim',
-  -- 'askfiy/visual_studio_code',
-
+  'nyoom-engineering/oxocarbon.nvim',
+  lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme 'tokyonight-night'
-    -- vim.cmd [[colorscheme visual_studio_code]]
+    vim.opt.background = 'dark' -- or "light"
+    vim.cmd.colorscheme 'oxocarbon'
   end,
 }
+
+--[[
+  -- this is the first original theme, I later change to use the nyoom-engineering
+  'folke/tokyonight.nvim',
+  priority = 1000,
+  config = function()
+    -- ถ้าเราอยากกลับไปใช้ original ให้เราเปิิดบรรทัดใต้นี้
+    -- vim.cmd.colorscheme 'tokyonight-night'
+  end,
+}
+]]
