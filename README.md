@@ -27,3 +27,5 @@ my shortcut
 - ctrl+shift+e = exploror (treesitter)
 - shift+l / shift+h = go into / out folder on the exploror
 - :pwd = show current dir
+
+see the `keymap.lua` to see all my shortcut
