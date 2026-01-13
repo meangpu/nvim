@@ -1,6 +1,8 @@
 vim.cmd 'let g:netrw_liststyle = 3'
 vim.o.termguicolors = true
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 -- Highlight when yanking (copying) text :help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
